@@ -5,7 +5,7 @@ describe("Performance Test", function() {
     var noRequestPerHour = 100000;
     var avgRequestTime = 1000;
 
-    var host = 'http://localhost:8080'
+    var host = 'https://loadtest.andreasponziell.repl.co'
 
     it("performance testing /ping", function(done) {
         this.timeout(1000 * 60);
@@ -20,6 +20,7 @@ describe("Performance Test", function() {
         var gLatency;
 
         function statusCallback(latency, result, error) {
+            console.log("Got latency:", latency);
             gLatency = latency;
         }
 
